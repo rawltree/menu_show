@@ -38,7 +38,7 @@ function menu_click(d) {
             if (enable == null) {
                 throw{
                     name:'initError',
-                    message:'生成的菜单错误'
+                    message:'生成的菜单样式错误'
                 }
             }
             removeClass(enable, 'enable')
@@ -59,7 +59,7 @@ function jump_hash(t) {
     if (hash === undefined) {
         throw{
             name:'hashError',
-            message:'类别生成错误'
+            message:'跳转生成错误'
         }
     }
     window.location.hash = hash
