@@ -28,22 +28,48 @@ function menu_click(d) {
 
         if (target.tagName === 'LI') {
             removeClass(target, 'disabled')
+            var enable = findChild(d, 'enable')
+            if (enable == null) {
+                throw{
+                    name:'initError',
+                    message:'init menu empty or something wrong'
+                }
+            }
+            removeClass(enable, 'enable')
+            addClass(enable, 'disabled')
+            addClass(target, 'enable')
         }
     }
 }
 
+function findChild(obj, cls) {
+    var ul = obj.firstElementChild
+    var child = ul.firstElementChild
+    while (child){
+        if (hasClass(child, cls)) {
+            return child
+        }
+        child = child.nextSibling
+        if (child.tagName !== 'LI') {
+            child = child.nextSibling
+        }
+        console.log(child)
+    }
+    return null
+}
+
 function hasClass(obj, cls) {  
-    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'));  
+    return obj.className.match(new RegExp('(\\s|^)' + cls + '(\\s|$)'))  
 }  
   
 function addClass(obj, cls) {  
-    if (!this.hasClass(obj, cls)) obj.className += " " + cls;  
+    if (!this.hasClass(obj, cls)) obj.className += " " + cls 
 }  
   
 function removeClass(obj, cls) {  
     if (hasClass(obj, cls)) {  
-        var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');  
-        obj.className = obj.className.replace(reg, ' ');  
+        var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)')
+        obj.className = obj.className.replace(reg, ' ') 
     }  
 }  
   
