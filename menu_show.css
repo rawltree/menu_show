@@ -1,0 +1,165 @@
+
+    *{margin: 0;padding: 0;}
+    body{min-width: 700px;}
+    @font-face {
+        font-family: 'iconfont';  /* project id 397439 */
+        src: url('//at.alicdn.com/t/font_397439_4tieusrzbx8t1emi.eot');
+        src: url('//at.alicdn.com/t/font_397439_4tieusrzbx8t1emi.eot?#iefix') format('embedded-opentype'),
+        url('//at.alicdn.com/t/font_397439_4tieusrzbx8t1emi.woff') format('woff'),
+        url('//at.alicdn.com/t/font_397439_4tieusrzbx8t1emi.ttf') format('truetype'),
+        url('//at.alicdn.com/t/font_397439_4tieusrzbx8t1emi.svg#iconfont') format('svg');
+    }
+    .iconfont{
+        font-family:"iconfont" !important;
+        font-size:16px;font-style:normal;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .header,
+    .footer{ 
+        border: 1px solid #333;
+        background: #4e74c2;
+    }
+    .header {
+        height:320px
+    }
+    .footer {
+        height:111px
+    }
+    .logo{
+        position: relative;
+        display: inline-block;
+        left: 76px;
+        top: 56px;
+    }
+    .desc{
+        display: inline-block;
+        position: absolute;
+        left: 348px;
+        top: 56px;
+        font-family: PingFang-SC;
+        font-size: 56px;
+        font-weight: 500;
+        text-align: center;
+        color: #ffffff;
+    }
+    .desc>.title{
+        /* width: 441px; */
+        height: 53px;
+        font-family: NotoSansHans;
+        font-size: 56px;
+        text-align: left;
+        color: #ffffff;
+    }
+    .desc>.content{
+        margin-top: 50px;
+        width: 670px;
+        height: 80px;
+        opacity: 0.8;
+        font-family: NotoSansHans;
+        font-size: 32px;
+        line-height: 1.5;
+        text-align: left;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    .logo>img{
+        height: 213px;
+    }
+    .sub,
+    .main,
+    .extra{ 
+        float: left;
+        min-height: 130px;
+    }
+    .sub{
+        margin-left: -100%;
+        width: 268px;
+        overflow: scroll;
+        height: 1477px;
+    }
+    .menu >ul >li{
+        padding: 0 16px;
+        font-size: 12px;
+        line-height: 42px;
+        height: 209px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .category{
+        position: relative;
+        top:56px;
+        width: 200px;
+        height : 92px;
+        font-family: NotoSansHans;
+        font-size: 46px;
+        line-height: 1.05;
+        text-align: left;
+        color: #4383ef;
+    }
+    .disabled{
+        background-color: #f5f5f5;
+    }
+    .main{ 
+        width: 100%;
+        overflow: scroll;
+        height: 1477px;
+    }
+    .main-inner{ 
+        margin-left: 268px;
+        overflow: hidden;
+        word-break: break-all;
+    }
+    .intro{
+        width: 812px;
+        height: 71px;
+        background-color: #fbfbfb;
+    }
+    .intro>div{
+        position: relative;
+        top: 20px;
+        left:48px;
+        height: 31px;
+        font-family: PingFang-SC;
+        font-size: 32px;
+        line-height: 1.26;
+        text-align: left;
+        color: #000000;
+    }
+    .item{
+        height:500px;
+    }
+    .minus{
+        width: 69px;
+        height: 69px;
+        border-radius: 34.5px;
+        background-color: #ffffff;
+        border: solid 2px #66a3fb;
+    }
+    .plus{
+        width: 69px;
+        height: 69px;
+        border-radius: 34.5px;
+        background-image: linear-gradient(
+            to left, 
+            #5887ff,
+            #71baf8);
+    }
+    .footer{ 
+        clear: both;
+    }
+    .checkout{
+        position: absolute;
+        right: 0;
+        width: 360px;
+        height: 111px;
+        background-image: linear-gradient(
+        to left, 
+        #5887ff, 
+        #71baf8);
+        font-family: PingFang-SC;
+        font-size: 40px;
+        font-weight: 500;
+        text-align: center;
+        color: #ffffff;
+    }

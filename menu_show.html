@@ -3,141 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<link rel="stylesheet" href="./menu_show.css">
 <title>菜单</title>
-<style type="text/css">
-    *{margin: 0;padding: 0;}
-    body{min-width: 700px;}
-    .header,
-    .footer{ 
-        border: 1px solid #333;
-        background: #4e74c2;
-    }
-    .header {
-        height:320px
-    }
-    .footer {
-        height:111px
-    }
-    .logo{
-        position: relative;
-        display: inline-block;
-        left: 76px;
-        top: 56px;
-    }
-    .desc{
-        display: inline-block;
-        position: absolute;
-        left: 348px;
-        top: 56px;
-        font-family: PingFang-SC;
-        font-size: 56px;
-        font-weight: 500;
-        text-align: center;
-        color: #ffffff;
-    }
-    .desc>.title{
-        /* width: 441px; */
-        height: 53px;
-        font-family: NotoSansHans;
-        font-size: 56px;
-        text-align: left;
-        color: #ffffff;
-    }
-    .desc>.content{
-        margin-top: 50px;
-        width: 670px;
-        height: 80px;
-        opacity: 0.8;
-        font-family: NotoSansHans;
-        font-size: 32px;
-        line-height: 1.5;
-        text-align: left;
-        color: rgba(255, 255, 255, 0.8);
-    }
-    .logo>img{
-        height: 213px;
-    }
-    .sub,
-    .main,
-    .extra{ 
-        float: left;
-        min-height: 130px;
-    }
-    .sub{
-        margin-left: -100%;
-        width: 268px;
-        overflow: scroll;
-        height: 1477px;
-    }
-    .menu >ul >li{
-        padding: 0 16px;
-        font-size: 12px;
-        line-height: 42px;
-        height: 209px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-    .category{
-        position: relative;
-        top:56px;
-        width: 200px;
-        height : 92px;
-        font-family: NotoSansHans;
-        font-size: 46px;
-        line-height: 1.05;
-        text-align: left;
-        color: #4383ef;
-    }
-    .disabled{
-        background-color: #f5f5f5;
-    }
-    .main{ 
-        width: 100%;
-        overflow: scroll;
-        height: 1477px;
-    }
-    .main-inner{ 
-        margin-left: 268px;
-        overflow: hidden;
-        background: green;
-        word-break: break-all;
-    }
-    .intro{
-        width: 812px;
-        height: 71px;
-        background-color: #fbfbfb;
-    }
-    .intro>span{
-        width: 187px;
-        height: 31px;
-        font-family: PingFang-SC;
-        font-size: 32px;
-        line-height: 1.26;
-        text-align: left;
-        color: #000000;
-    }
-    .item{
-        height:500px;
-    }
-    .footer{ 
-        clear: both;
-    }
-    .checkout{
-        position: absolute;
-        right: 0;
-        width: 360px;
-        height: 111px;
-        background-image: linear-gradient(
-        to left, 
-        #5887ff, 
-        #71baf8);
-        font-family: PingFang-SC;
-        font-size: 40px;
-        font-weight: 500;
-        text-align: center;
-        color: #ffffff;
-    }
-</style>
 </head>
 <body>
 <div class="header">
@@ -152,9 +19,19 @@
     <div class="main">
         <div class="main-inner">
             <div class="intro">
-                <span>单人优惠套餐</span>
+                <div>单人优惠套餐</div>
             </div>
-            <div class="item"></div>
+            <div class="item">
+                <img src="./img/item.jpg" alt="">
+                <i class="iconfont" style="color:#66a3fb;">&#xe602;</i>
+                <i class="iconfont" style="color:  #5887ff;">&#xe629;</i>
+                <div class="minus">
+
+                </div>
+                <div class="plus">
+
+                </div>
+            </div>
             <div class="item"></div>
             <div class="item"></div>
             <div class="item"></div>
