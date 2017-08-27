@@ -1,3 +1,26 @@
+Function.prototype.method = function (name, func) {
+    this.prototype[name] = func
+    return this
+}
+
+String.method("deentityify", function(){
+    var entity = {
+        quot: '"',
+        lt: '<',
+        gt: '>'
+    }
+    return function(){
+        return this.replace(/&([^&;]+);/g,
+            function(a, b){
+                var r = entity[b]
+                return typeof r ==='string' ? r : a
+            })
+    }
+}())
+
+var x = "<h1>heading 1</h1>"
+x.deentityify() 
+
 var walk_the_DOM = function(node, func){
     func(node)
     node = node.firstChild

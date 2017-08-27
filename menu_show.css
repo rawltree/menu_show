@@ -1,6 +1,6 @@
 
     *{margin: 0;padding: 0;}
-    body{min-width: 700px;}
+    body{min-width: 700px;overflow-y: hidden;}
     @font-face {
         font-family: 'iconfont';  /* project id 397439 */
         src: url('//at.alicdn.com/t/font_397439_4tieusrzbx8t1emi.eot');
@@ -16,16 +16,18 @@
         -webkit-text-stroke-width: 0.2px;
         -moz-osx-font-smoothing: grayscale;
     }
-    .header,
-    .footer{ 
+    .header{
         border: 1px solid #333;
-        background: #4e74c2;
     }
     .header {
-        height:320px
+        height:320px;
+        background: #4e74c2;
     }
     .footer {
-        height:111px
+        height:111px;
+    }
+    span{
+        pointer-events:none;
     }
     .logo{
         position: relative;
@@ -70,6 +72,7 @@
     .main,
     .extra{ 
         float: left;
+        margin-right: 5px;
         min-height: 130px;
     }
     .sub{
@@ -127,9 +130,10 @@
         color: #000000;
     }
     .item{
-        height:500px;
+        height:344px;
     }
     .minus{
+        display: inline-block;
         width: 69px;
         height: 69px;
         border-radius: 34.5px;
@@ -137,6 +141,7 @@
         border: solid 2px #66a3fb;
     }
     .plus{
+        display: inline-block;
         width: 69px;
         height: 69px;
         border-radius: 34.5px;
@@ -144,6 +149,16 @@
             to left, 
             #5887ff,
             #71baf8);
+    }
+    .shoplist{
+        display: inline-block;
+        bottom: 12px;
+        position: absolute;
+        left:56px;
+        width: 134px;
+        height: 134px;
+        border-radius: 67px;
+        background-image: linear-gradient(to left, #5887ff, #71baf8);
     }
     .footer{ 
         clear: both;
@@ -162,4 +177,55 @@
         font-weight: 500;
         text-align: center;
         color: #ffffff;
+    }
+    .item_img{
+        position: relative;
+        display: inline-block;
+        height: 344px;
+        left: 47px;
+        top: 27px;
+    }
+    .item_desc{
+        position: relative;
+        display: inline-block;
+        left: 75px;
+        top:10px;
+    }
+    .item_name{
+        /* height: 83px; */
+        font-family: PingFang-SC;
+        font-size: 46px;
+        font-weight: 500;
+        line-height: 1.07;
+        text-align: left;
+        color: #303030;
+    }
+    .item_detail,
+    .item_sails{
+        /* height: 58px; */
+        font-family: PingFang-SC;
+        font-size: 40px;
+        line-height: 1.23;
+        text-align: left;
+        color: #888888;
+    }
+    .item_price{
+        width: 147px;
+        height: 35px;
+        font-family: PingFang-SC;
+        font-size: 46px;
+        font-weight: 500;
+        text-align: left;
+        color: #ff803a;
+    }
+    hr{
+        border:0;
+        background-color:#d9d9d9;
+        height:2px;
+    }
+    .image_small{
+        width: 186px;
+        height: 182px;
+        border-radius: 6px;
+        background-color: #4383ef;
     }
