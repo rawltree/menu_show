@@ -27,6 +27,11 @@ function menu_click(d) {
         var target = e.srcElement || e.target;
 
         if (target.tagName === 'LI') {
+            // 判断菜单是已经选中的
+            if (hasClass(target, 'enable')) {
+                return 'do nothing'
+            }
+            //修改menu样式
             removeClass(target, 'disabled')
             var enable = findChild(d, 'enable')
             if (enable == null) {
@@ -38,6 +43,10 @@ function menu_click(d) {
             removeClass(enable, 'enable')
             addClass(enable, 'disabled')
             addClass(target, 'enable')
+            //切换类别菜单显示
+            //考虑使用#锚点的方式，菜单可以继续上下拖动
+            //href#menu
+            
         }
     }
 }
