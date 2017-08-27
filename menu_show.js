@@ -14,7 +14,7 @@ var $ = ready = window.ready = function(fn){
         });  
     }  
 }  
-  
+
 $(function(){
     // menu.click
     var menu = document.getElementsByClassName("menu")[0]
@@ -29,6 +29,7 @@ function menu_click(d) {
         if (target.tagName === 'LI') {
             // 判断菜单是已经选中的
             if (hasClass(target, 'enable')) {
+                jump_hash(target)
                 return 'do nothing'
             }
             //修改menu样式
@@ -37,7 +38,7 @@ function menu_click(d) {
             if (enable == null) {
                 throw{
                     name:'initError',
-                    message:'init menu empty or something wrong'
+                    message:'生成的菜单错误'
                 }
             }
             removeClass(enable, 'enable')
@@ -46,11 +47,23 @@ function menu_click(d) {
             //切换类别菜单显示
             //考虑使用#锚点的方式，菜单可以继续上下拖动
             //href#menu
-            
+            jump_hash(target)   //js跳转 可能需要改用scroll函数 ，还能加入一点动画效果
+                                //case：点击后跳转，操作后再次点击原来的类别菜单不会更新，因为hash没有变化 
         }
     }
 }
 
+function jump_hash(t) {
+    var span = t.firstElementChild
+    var hash = span.dataset.hash
+    if (hash === undefined) {
+        throw{
+            name:'hashError',
+            message:'类别生成错误'
+        }
+    }
+    window.location.hash = hash
+}
 function findChild(obj, cls) {
     var ul = obj.firstElementChild
     var child = ul.firstElementChild
@@ -62,7 +75,6 @@ function findChild(obj, cls) {
         if (child.tagName !== 'LI') {
             child = child.nextSibling
         }
-        console.log(child)
     }
     return null
 }
@@ -89,3 +101,8 @@ function toggleClass(obj,cls){
         addClass(obj, cls);  
     }  
 }
+
+//添加、删除菜的选择后在chosed变量上处理数据
+//网页重新加载的时候需要保留数据的化考虑在localStorage储存
+var chosed = {}
+
