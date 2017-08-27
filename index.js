@@ -32,3 +32,7 @@ add.method('say', function(){
 
 // add.say()
 add.prototype.say()
+
+fade(document.body)
+
+add_the_handlers(document.body.children)
