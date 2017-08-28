@@ -67,3 +67,45 @@ var add_the_handlers = function (nodes) {
         
     }
 }
+
+var add = function(a, b){
+    return a + b
+}
+// 级联 return thos;
+// curry
+Function.method('curry', function () {
+    var slice = Array.prototype.slice,
+        args = slice.apply(arguments),
+        that = this
+    return function(){
+        return that.apply(null, args.concat(slice.apply(arguments)))
+    }
+})
+
+add1 = add.curry(1)
+console.log(add1(111))
+
+var memoizer = function (memo, fundamental){
+    var shell = function(n){
+        var result = memo[n]
+        if (typeof result !== 'number') {
+            result = fundamental(shell, n)
+            memo[n] = result
+        }
+        return result
+    }
+    return shell
+}
+
+var fibonacci = memoizer([0, 1], function(shell, n){
+    return shell(n - 1) + shell(n - 2)
+})
+console.time('1')
+console.log(fibonacci(1000))
+console.timeEnd('1')
+console.time('2')
+console.log(fibonacci(1001))
+console.timeEnd('2')
+console.time('3')
+console.log(fibonacci(5))
+console.timeEnd('3')
