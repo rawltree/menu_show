@@ -14,11 +14,15 @@ var $ = ready = window.ready = function(fn){
         });  
     }  
 }  
-
+var allHash = {}
 $(function(){
     // menu.click
     var menu = document.getElementsByClassName("menu")[0]
     menu_click(menu)
+    //get #hash
+    var A1 = document.getElementsByName("A1")[0]
+    var A2 = document.getElementsByName("A2")[0]
+    allHash = [A1, A2]
 }) 
 
 function menu_click(d) {
@@ -33,17 +37,7 @@ function menu_click(d) {
                 return 'do nothing'
             }
             //修改menu样式
-            removeClass(target, 'disabled')
-            var enable = findChild(d, 'enable')
-            if (enable == null) {
-                throw{
-                    name:'initError',
-                    message:'生成的菜单样式错误'
-                }
-            }
-            removeClass(enable, 'enable')
-            addClass(enable, 'disabled')
-            addClass(target, 'enable')
+            set_active(d, target)
             //切换类别菜单显示
             //考虑使用#锚点的方式，菜单可以继续上下拖动
             //href#menu
@@ -52,6 +46,38 @@ function menu_click(d) {
         }
     }
 }
+
+function set_active(menu, target){
+    removeClass(target, 'disabled')
+    var enable = findChild(menu, 'enable')
+    if (enable == null) {
+        throw{
+            name:'initError',
+            message:'生成的菜单样式错误'
+        }
+    }
+    removeClass(enable, 'enable')
+    addClass(enable, 'disabled')
+    addClass(target, 'enable')
+}
+
+function scroll_update_menu () {
+    var main = document.getElementsByClassName('main')[0]
+    var top = main.scrollTop
+    var last
+    for (var i = 0; i < allHash.length; i++) {
+      var link = allHash[i]
+      if (link.offsetTop >= top) {
+        last = link
+        break
+      } else {
+        last = link
+      }
+    }
+    if (last)
+    // setActive(last.id, !hoveredOverSidebar)
+        console.log(last)
+  }
 
 function jump_hash(t) {
     var span = t.firstElementChild
@@ -104,5 +130,11 @@ function toggleClass(obj,cls){
 
 //添加、删除菜的选择后在chosed变量上处理数据
 //网页重新加载的时候需要保留数据的化考虑在localStorage储存
-var chosed = {}
+var chosed = {
+    'id1':{
+        num:1
+    },
+    'id2':1,
+    tootal:100
+}
 
