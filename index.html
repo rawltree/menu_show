@@ -5,15 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>        
+        div {
+        clear: both;
+        margin: 0 50px;
+        }
+
+        /* hide input */
+        input.radio:empty {
+        margin-left: -999px;
+        }
+
+        /* style label */
+        input.radio:empty ~ label {
+        position: relative;
+        float: left;
+        line-height: 2.5em;
+        text-indent: 3.25em;
+        margin-top: 2em;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        }
+
+        input.radio:empty ~ label:before {
+        position: absolute;
+        display: block;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        content: '';
+        width: 2.5em;
+        background: #ffffff;
+        border-radius: 1.2em;
+        -webkit-box-shadow: 0 0 0 1px #999;
+        box-shadow: 0 0 0 1px #999;
+        }
+
+        /* toggle on */
+        input.radio:checked ~ label:before {
+        content: '\2714';
+        text-indent: .9em;
+        color: #FFFFFF;
+        background-color: #70A2F6;
+        }
+
+        input.radio:checked ~ label {
+        color: #777;
+        }
+
+        /* radio focus */
+        input.radio:focus ~ label:before {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        }
+    </style>
 </head>
 <body>
-    <div id="asdf1">1</div>
-    <div id="asdf2" >2</div>
-    <div id="asdf3">3</div>
-    <div id="asdf4" aaa>4</div>
-    <p id="pid">Hello</p>
-    <button onclick="demo()">按钮</button>
-    <script src="./tools.js"></script>
-    <script src="./index.js"></script>
+        <div>
+            <input type="radio" name="radio" id="radio2" class="radio"/>
+            <label for="radio2">&nbsp;</label>
+        </div>
+        <div>
+            <input type="radio" name="radio" id="radio1" class="radio"/>
+            <label for="radio1">&nbsp;</label>
+        </div>
 </body>
 </html>
