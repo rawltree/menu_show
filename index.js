@@ -36,3 +36,6 @@ add.prototype.say()
 fade(document.body)
 
 add_the_handlers(document.body.children)
+
+var x = require('zepto')
+$.

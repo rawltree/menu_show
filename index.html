@@ -8,7 +8,8 @@
     <style>        
         div {
         clear: both;
-        margin: 0 50px;
+        /* margin: 0 50px; */
+        display: inline-block;
         }
 
         /* hide input */
@@ -61,16 +62,37 @@
         -webkit-box-shadow: none;
         box-shadow: none;
         }
+        ul >li{
+            padding: 0 16px;
+            font-size: 12px;
+            line-height: 42px;
+            width:500px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border: 1px solid #eaeaea;
+        }
     </style>
 </head>
 <body>
-        <div>
-            <input type="radio" name="radio" id="radio2" class="radio"/>
-            <label for="radio2">&nbsp;</label>
-        </div>
-        <div>
-            <input type="radio" name="radio" id="radio1" class="radio"/>
-            <label for="radio1">&nbsp;</label>
-        </div>
+        
+        
+        <ul>
+            <li>
+                <span>支付宝</span>
+                    <div>
+                            <input type="radio" name="radio" id="radio2" class="radio"/>
+                            <label for="radio2">&nbsp;</label>
+                        </div>
+            </li>
+            <li>
+                    <div>
+                            <input type="radio" name="radio" id="radio1" class="radio"/>
+                            <label for="radio1">&nbsp;</label>
+                        </div>
+            </li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
 </body>
 </html>

@@ -109,3 +109,91 @@ console.timeEnd('2')
 console.time('3')
 console.log(fibonacci(5))
 console.timeEnd('3')
+
+Function.method('inherits', function (Parent){
+    this.prototype = new Parent()
+    return this
+})
+var Mammal = function (name) {
+    this.name = name
+}
+Mammal.prototype.says = function(){
+    return this.name
+}
+var Cat = function (name) {
+    this.name = name
+    this.saying = 'meow'
+}.
+    inherits(Mammal).
+    method('purr', function(n){
+        console.log('purr')
+    }).
+    method('get_name', function(){
+        return this.name + ' ' + this.name + this.says()
+    })
+
+var cat1 = new Cat("Dan")
+console.log(cat1.name)
+
+if (typeof Object.beget !== 'function') {
+    Object.beget = function (o) {
+        var F = function () {}
+        F.prototype = o
+        return new F()
+    }
+}
+
+p = {
+    x:1,
+    y:2
+}
+c = Object.beget(p)
+c.x='1'
+console.log(c.y)
+
+Object.method('superior', function(name){
+    var that = this,
+        method = that[name]
+    return function(){
+        return method.apply(that, arguments)
+    }
+})
+
+var eventuality = function(that){
+    var registry ={}
+    that.fire = function(event){
+        var array,
+            func,
+            handler,
+            i,
+            type = typeof event === 'string'?
+                event : event.type
+        if (registry.hasOwnProperty(type)) {
+            array = registry[type]
+            for (i = 0; i < array.length; i++) {
+                handler = array[i];
+                func = handler.method
+                if(typeof func === 'string'){
+                    func = this[func]
+                }
+                func.apply(this,
+                    handler.parameters || [event])
+            }
+            return this
+        }
+    }
+    that.on = function(type, method, parameters){
+        var handler = {
+            method: method,
+            parameters:parameters
+        }
+        if(registry.hasOwnProperty(type)){
+            registry[type].push(handler)
+        }else{
+            registry[type] = [handler]
+        }
+        return this
+    }
+    return that
+}
+
